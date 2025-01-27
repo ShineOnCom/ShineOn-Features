@@ -1,4 +1,5 @@
-# shineon-json-liquid-tae
+# ShineOn Theme App Extensions
+> This repo will help you to add ShineOn features to your theme product pages.
 
 ## Getting Started
 
