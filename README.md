@@ -1,2 +1,8 @@
 # shineon-json-liquid-tae
-json templates and section for ShineOn theme app extensions
+
+## Getting Started
+
+### Theme files
+Copy files from `templates` and `sections` folders to your theme folders.
+
+### Add Theme App Extension from the list
