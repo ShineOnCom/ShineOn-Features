@@ -17,7 +17,6 @@
           {% assign addon_schema_obj = all_products[product_addon.handle].metafields.shineon.schema_v2.value
             | default: all_products[product_addon.handle].metafields.shineon.schema_v2
           %}
-          {% assign addon_product = all_products[product_addon.handle] | sort %}
           {% assign pt_id = 'pt_' | append: addon_schema_obj.product_template_id %}
           {% assign shop_pt_id_obj = shop.metafields.shineon[pt_id].value | default: shop.metafields.shineon[pt_id] %}
           {% assign addon_cf_obj = shop_pt_id_obj.custom_fields %}
@@ -38,15 +37,8 @@
       }
     },
     {% endif %}
-    "id": {{ product.id | json }},
-    "title": {{ product.title | json }},
-    "handle": {{ product.handle | json }},
-    "tags": {{ product.tags | json }},
-    "variants": {{ product.variants | json }},
+    "product": {{ product | json }},
     "selected_variant": {{ product.selected_or_first_available_variant | json }},
-    "options": {{ product.options | json }},
-    "media": {{ product.media | json }},
-    "images": {{ product.images | json }},
     "variant_metafields": {
       {% for variant in product.variants %}
         "{{ variant.id }}": {
