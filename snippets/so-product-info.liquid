@@ -6,7 +6,6 @@
 
 {% assign addons = product.metafields.shineon.addons.value | default: product.metafields.shineon.addons %}
 {% assign product_addons = addons.items | where: 'type', 'product_addon' | sort: 'order' %}
-
 <script type="application/json" id="product-info">
   {
     {% if product_addons.size > 0 %}
@@ -18,8 +17,8 @@
             | default: all_products[product_addon.handle].metafields.shineon.schema_v2
           %}
           {% assign pt_id = 'pt_' | append: addon_schema_obj.product_template_id %}
-          {% assign shop_pt_id_obj = shop.metafields.shineon[pt_id].value | default: shop.metafields.shineon[pt_id] %}
-          {% assign addon_cf_obj = shop_pt_id_obj.custom_fields %}
+          {% assign addon_pt_id_obj = shop.metafields.shineon[pt_id].value | default: shop.metafields.shineon[pt_id] %}
+          {% assign addon_cf_obj = addon_pt_id_obj.custom_fields %}
           "{{ product_addon.handle }}": {
             {% if addon_cf_obj.size > 0 %}
               "addon_cfs": {
