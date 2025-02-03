@@ -1,7 +1,8 @@
-# ShineOn Theme App Extensions
-> This repository helps you add ShineOn features to your theme product pages using Theme App Extensions.
+# Displaying ShineOn features by
+1. [Adding components to your product page(beta)](https://github.com/ShineOnCom/SOPP-to-Theme-App-Extensions/blob/main/how-to-add-components.md)
+2. [Using Theme App Extensions](https://github.com/ShineOnCom/SOPP-to-Theme-App-Extensions/edit/main/README.md#getting-started-with-theme-app-extension)
 
-## Getting Started
+## Using Theme App Extensions
 
 ### Theme Files
 Copy the files from the `templates` and `sections` folders to your theme's corresponding folders.
