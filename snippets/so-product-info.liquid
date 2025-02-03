@@ -6,8 +6,7 @@
 
 {% assign addons = product.metafields.shineon.addons.value | default: product.metafields.shineon.addons %}
 {% assign product_addons = addons.items | where: 'type', 'product_addon' | sort: 'order' %}
-
-<script type="application/json" id="product-info">
+<script type="application/json" id="product-info" data-version="1.1.0">
   {
     {% if product_addons.size > 0 %}
     "upsells": {
@@ -18,8 +17,8 @@
             | default: all_products[product_addon.handle].metafields.shineon.schema_v2
           %}
           {% assign pt_id = 'pt_' | append: addon_schema_obj.product_template_id %}
-          {% assign shop_pt_id_obj = shop.metafields.shineon[pt_id].value | default: shop.metafields.shineon[pt_id] %}
-          {% assign addon_cf_obj = shop_pt_id_obj.custom_fields %}
+          {% assign addon_pt_id_obj = shop.metafields.shineon[pt_id].value | default: shop.metafields.shineon[pt_id] %}
+          {% assign addon_cf_obj = addon_pt_id_obj.custom_fields %}
           "{{ product_addon.handle }}": {
             {% if addon_cf_obj.size > 0 %}
               "addon_cfs": {
@@ -50,7 +49,8 @@
     },
     "product_url": {{ product.url | json }},
     "options_with_values": {{ product.options_with_values | json }},
-    "trigger_selector": "input[name='id']",
+    "variant_id_input": "input[name='id']",
+    "trigger_selector": "ADD_YOUR_SELECTOR",
     "shop_pt_id_obj": {{ shop_pt_id_obj | json }},
     "shop_cf": {
       {% for cf in product_cfs %}
