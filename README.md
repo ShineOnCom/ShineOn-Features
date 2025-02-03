@@ -1,4 +1,14 @@
-# Displaying ShineOn features by
+# ShineOn Features
+1. Hyper(Personalization)
+   - Engraving input fields
+   - Laser Cut products
+2. Upsells
+   - Product page
+      - Addons with buyer inputs(gift wrap with message card, …)
+      - Simple addons(polishing cloth, rose petals, gift bag, earrings, etc.)
+
+
+## Displaying features by
 1. [Adding components to your product page(beta)](https://github.com/ShineOnCom/SOPP-to-Theme-App-Extensions/blob/main/how-to-add-components.md)
 2. [Using Theme App Extensions](https://github.com/ShineOnCom/SOPP-to-Theme-App-Extensions/edit/main/README.md#getting-started-with-theme-app-extension)
 
