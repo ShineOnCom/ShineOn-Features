@@ -5835,9 +5835,7 @@ const Li = {
           (Ee) => Ee.id === parseInt(document.querySelector('[name="id"]').value)
         )[0]
       );
-    };
-    console.log(g.trigger_selector);
-    const W = document.querySelectorAll(g.trigger_selector);
+    }, W = document.querySelectorAll(g.trigger_selector);
     W.forEach((we) => we.addEventListener("change", U));
     const Ve = qf(ie);
     return () => {
