@@ -1,3 +1,6 @@
+
+*.*
+
 # OS generated files #
 ######################
 .DS_Store
@@ -13,5 +16,5 @@ node_modules
 .vscode
 
 # TAE resticted directories
-sections/
-templates/
+!assets/so-hyper.*
+!snippets/so-product-info.liquid
