@@ -11,3 +11,7 @@ Thumbs.db
 node_modules
 .idea
 .vscode
+
+# TAE resticted directories
+sections/
+templates/
