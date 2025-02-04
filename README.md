@@ -10,7 +10,7 @@
 
 ## Displaying features by
 1. [Adding components to your product page(beta)](https://github.com/ShineOnCom/SOPP-to-Theme-App-Extensions/blob/main/how-to-add-components.md)
-2. [Using Theme App Extensions](https://github.com/ShineOnCom/SOPP-to-Theme-App-Extensions/edit/main/README.md#getting-started-with-theme-app-extension)
+2. [Using Theme App Extensions](https://github.com/ShineOnCom/ShineOn-Features?tab=readme-ov-file#using-theme-app-extensions)
 
 ## Using Theme App Extensions
 
