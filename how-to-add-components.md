@@ -26,7 +26,7 @@
 10. Click **Save**
 
 ### Placing the app block to the page
-1. Choose the place where the app should be. On the example I want to place it right above quantity section so I need to get class name of the section.![get-class](https://github.com/user-attachments/assets/5cd29409-2cf3-4957-9e66-d0d56f4d6222)
+1. Choose the place where the app should be. As an example I want to place it right above quantity section so I need to get class name of the section.![get-class](https://github.com/user-attachments/assets/5cd29409-2cf3-4957-9e66-d0d56f4d6222)
 2. Go to theme code editor to the file for product page, find the class and paste `<div id="so-hyper"></div>` there.![place-app](https://github.com/user-attachments/assets/4a5b0300-9cf9-429b-a655-d06b53dc4383)
 3. Click **Save**
 ![check-inputs](https://github.com/user-attachments/assets/9d80b7d7-e278-419d-9ced-38b4903f8ceb)
