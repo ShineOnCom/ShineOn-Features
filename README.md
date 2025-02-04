@@ -24,5 +24,4 @@ Copy the files from the `templates` and `sections` folders to your theme's corre
 2. Select `shineon-starter` template in Product Templates list. Add(if it's not there) the **ShineOn Product Page** block from the Apps list for the template.  
    ![theme-custom-starter](https://github.com/user-attachments/assets/9813e7bb-943e-41fb-bb71-70e35fd7a30d)
 3. Then change template in your Shopify admin product page![select-template](https://github.com/user-attachments/assets/e53b6492-a0da-49e2-89c9-0158523e021c)
-
 4. Click **Save**.
