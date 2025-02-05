@@ -7,56 +7,61 @@
 {% assign addons = product.metafields.shineon.addons.value | default: product.metafields.shineon.addons %}
 {% assign product_addons = addons.items | where: 'type', 'product_addon' | sort: 'order' %}
 <script type="application/json" id="product-info" data-version="1.1.0">
-    {
-      {% if product_addons.size > 0 %}
-      "upsells": {
-        "product_addons": {{ product_addons | json }},
-        "addons_products": {
-          {% for product_addon in product_addons %}
-            {% assign addon_schema_obj = all_products[product_addon.handle].metafields.shineon.schema_v2.value
-              | default: all_products[product_addon.handle].metafields.shineon.schema_v2
-            %}
-            {% assign pt_id = 'pt_' | append: addon_schema_obj.product_template_id %}
-            {% assign addon_pt_id_obj = shop.metafields.shineon[pt_id].value | default: shop.metafields.shineon[pt_id] %}
-            {% assign addon_cf_obj = addon_pt_id_obj.custom_fields %}
-            "{{ product_addon.handle }}": {
-              {% if addon_cf_obj.size > 0 %}
-                "addon_cfs": {
-                  {% for addon_cf_id in addon_cf_obj %}
-                    {% assign addon_shop_cf = shop.metafields.shineon[addon_cf_id.key].value
-                      | default: shop.metafields.shineon[addon_cf_id.key]
-                    %}
-                    "{{ addon_cf_id.key }}": {{ addon_shop_cf | json }}{% unless forloop.last %},{% endunless %}
-                  {% endfor %}
-                },
-              {% endif %}
-              "product": {{ all_products[product_addon.handle] | json }}
-            }{% unless forloop.last %},{% endunless %}
-          {% endfor %}
-        }
-      },
-      {% endif %}
-      "product": {{ product | json }},
-      "selected_variant": {{ product.selected_or_first_available_variant | json }},
-      "variant_metafields": {
-        {% for variant in product.variants %}
-          "{{ variant.id }}": {
-            "metal": {{ variant.metafields.shineon.metal | json }},
-            "engravings": {{ variant.metafields.shineon.engravings | json }},
-            "schema_v2": {{ variant.metafields.shineon.schema_v2.value | default: variant.metafields.shineon.schema_v2 | json }}
+  {
+    "shop-info": {
+      "sectionID": {{ section.id | json }},
+      "shop_money_format": {{ shop.money_format | json }},
+      "shop_currency": {{ shop.currency | json }}
+    },
+    {% if product_addons.size > 0 %}
+    "upsells": {
+      "product_addons": {{ product_addons | json }},
+      "addons_products": {
+        {% for product_addon in product_addons %}
+          {% assign addon_schema_obj = all_products[product_addon.handle].metafields.shineon.schema_v2.value
+            | default: all_products[product_addon.handle].metafields.shineon.schema_v2
+          %}
+          {% assign pt_id = 'pt_' | append: addon_schema_obj.product_template_id %}
+          {% assign addon_pt_id_obj = shop.metafields.shineon[pt_id].value | default: shop.metafields.shineon[pt_id] %}
+          {% assign addon_cf_obj = addon_pt_id_obj.custom_fields %}
+          "{{ product_addon.handle }}": {
+            {% if addon_cf_obj.size > 0 %}
+              "addon_cfs": {
+                {% for addon_cf_id in addon_cf_obj %}
+                  {% assign addon_shop_cf = shop.metafields.shineon[addon_cf_id.key].value
+                    | default: shop.metafields.shineon[addon_cf_id.key]
+                  %}
+                  "{{ addon_cf_id.key }}": {{ addon_shop_cf | json }}{% unless forloop.last %},{% endunless %}
+                {% endfor %}
+              },
+            {% endif %}
+            "product": {{ all_products[product_addon.handle] | json }}
           }{% unless forloop.last %},{% endunless %}
         {% endfor %}
-      },
-      "product_url": {{ product.url | json }},
-      "options_with_values": {{ product.options_with_values | json }},
-      "variant_id_input": "input[name='id']",
-      "trigger_selector": {{ trigger_selector | json }},
-      "shop_pt_id_obj": {{ shop_pt_id_obj | json }},
-      "shop_cf": {
-        {% for cf in product_cfs %}
-          "{{ cf.key }}": {{ shop.metafields.shineon[cf.key].value
-            | default: shop.metafields.shineon[cf.key] | json }}{% unless forloop.last %},{% endunless %}
-        {% endfor %}
       }
+    },
+    {% endif %}
+    "product": {{ product | json }},
+    "selected_variant": {{ product.selected_or_first_available_variant | json }},
+    "variant_metafields": {
+      {% for variant in product.variants %}
+        "{{ variant.id }}": {
+          "metal": {{ variant.metafields.shineon.metal | json }},
+          "engravings": {{ variant.metafields.shineon.engravings | json }},
+          "schema_v2": {{ variant.metafields.shineon.schema_v2.value | default: variant.metafields.shineon.schema_v2 | json }}
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    },
+    "product_url": {{ product.url | json }},
+    "options_with_values": {{ product.options_with_values | json }},
+    "variant_id_input": "input[name='id']",
+    "trigger_selector": {{ trigger_selector | json }},
+    "shop_pt_id_obj": {{ shop_pt_id_obj | json }},
+    "shop_cf": {
+      {% for cf in product_cfs %}
+        "{{ cf.key }}": {{ shop.metafields.shineon[cf.key].value
+          | default: shop.metafields.shineon[cf.key] | json }}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
     }
+  }
 </script>

@@ -1,3 +1,6 @@
+
+*.*
+
 # OS generated files #
 ######################
 .DS_Store
@@ -11,3 +14,7 @@ Thumbs.db
 node_modules
 .idea
 .vscode
+
+# TAE resticted directories
+!assets/so-hyper.*
+!snippets/so-product-info.liquid
