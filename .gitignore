@@ -1,7 +1,7 @@
 
 *.*
 sections/*
-templates/*
+!templates/*
 
 # OS generated files #
 ######################
