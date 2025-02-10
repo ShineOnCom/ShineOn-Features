@@ -1,7 +1,7 @@
 # ShineOn Features
 1. Hyper(Personalization)
    - Engraving input fields
-   - Laser Cut products
+   - Input for Laser Cut products
 2. Upsells
    - Product page
       - Addons with buyer inputs(gift wrap with message card, …)
