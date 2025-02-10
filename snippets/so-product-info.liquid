@@ -6,7 +6,8 @@
 
 {% assign addons = product.metafields.shineon.addons.value | default: product.metafields.shineon.addons %}
 {% assign product_addons = addons.items | where: 'type', 'product_addon' | sort: 'order' %}
-<script type="application/json" id="product-info" data-version="1.1.0">
+
+<script type="application/json" id="product-info" data-version="1.1.1">
   {
     "shop-info": {
       "sectionID": {{ section.id | json }},
