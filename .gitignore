@@ -16,5 +16,5 @@ node_modules
 .vscode
 
 # TAE resticted directories
-!assets/so-hyper.*
-!snippets/so-product-info.liquid
+!shineon-theme-blocks/assets/so-hyper.*
+!shineon-theme-blocks/snippets/so-product-info.liquid
