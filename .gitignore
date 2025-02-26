@@ -20,4 +20,3 @@ node_modules
 !shineon-starter-template/sections/
 !shineon-theme-blocks/assets/so-hyper.*
 !shineon-theme-blocks/snippets/so-product-info.liquid
-!templates/
