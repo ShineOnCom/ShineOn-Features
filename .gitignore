@@ -1,3 +1,6 @@
+
+*.*
+
 # OS generated files #
 ######################
 .DS_Store
@@ -11,3 +14,11 @@ Thumbs.db
 node_modules
 .idea
 .vscode
+
+# TAE resticted directories
+!shineon-starter-template/*.md
+!shineon-starter-template/templates/
+!shineon-starter-template/sections/
+!shineon-theme-blocks/assets/so-hyper.*
+!shineon-theme-blocks/snippets/so-product-info.liquid
+!shineon-theme-blocks/README.md
