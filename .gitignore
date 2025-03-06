@@ -22,3 +22,4 @@ node_modules
 !shineon-theme-blocks/assets/so-hyper.*
 !shineon-theme-blocks/snippets/so-product-info.liquid
 !shineon-theme-blocks/README.md
+theme-core/packages/*/src/styles/*
