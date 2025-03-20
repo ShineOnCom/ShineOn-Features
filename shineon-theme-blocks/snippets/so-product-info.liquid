@@ -7,7 +7,7 @@
 {% assign addons = product.metafields.shineon.addons.value | default: product.metafields.shineon.addons %}
 {% assign product_addons = addons.items | where: 'type', 'product_addon' | sort: 'order' %}
 
-<script type="application/json" id="product-info" data-version="2.0.6">
+<script type="application/json" id="product-info" data-version="2.0.7">
   {
     "shop_info": {
       "sectionID": {{ section.id | json }},
@@ -48,6 +48,7 @@
       {% for variant in product.variants %}
         "{{ variant.id }}": {
           "metal": {{ variant.metafields.shineon.metal | json }},
+          "shape": {{ variant.metafields.shineon.shape | json }},
           "engravings": {{ variant.metafields.shineon.engravings | json }},
           "schema_v2": {{ variant.metafields.shineon.schema_v2.value | default: variant.metafields.shineon.schema_v2 | json }}
         }{% unless forloop.last %},{% endunless %}
