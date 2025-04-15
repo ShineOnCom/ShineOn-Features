@@ -7,7 +7,7 @@
 {% assign addons = product.metafields.shineon.addons.value | default: product.metafields.shineon.addons %}
 {% assign product_addons = addons.items | where: 'type', 'product_addon' | sort: 'order' %}
 
-<script type="application/json" id="product-info" data-version="2.0.9">
+<script type="application/json" id="product-info">
   {
     "shop_info": {
       "sectionID": {{ section.id | json }},
@@ -64,6 +64,11 @@
         "{{ cf.key }}": {{ shop.metafields.shineon[cf.key].value
           | default: shop.metafields.shineon[cf.key] | json }}{% unless forloop.last %},{% endunless %}
       {% endfor %}
+    },
+    "additions": {
+      "mapbox": {
+        "access_token": {{ mapbox_access_token | default: "pk.eyJ1IjoiYWxla3NoaW5lb24iLCJhIjoiY202ejZiYjZxMDFnZjJrcXM3b2F4OTI1ZiJ9.OuSSAJIvxBUncZsIa4f9dg" | json }}
+      }
     }
   }
 </script>
