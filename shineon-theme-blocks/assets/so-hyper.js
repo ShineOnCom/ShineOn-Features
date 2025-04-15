@@ -73480,7 +73480,7 @@ const gS = ({ previewContent: mt, previewType: Tt, width: qe, height: Q, current
                       quantity: 0
                     })
                   });
-                V(re);
+                Le.length == 0 && document.querySelector("#so-pp") && (window.location = "/cart"), V(re);
               },
               { once: !0 }
             );
@@ -76756,7 +76756,7 @@ const rE = /* @__PURE__ */ dd(iE), nE = ({ currentVariant: mt }) => {
     return k.field_type === "custom" && ((T = k.slug) == null ? void 0 : T.includes("capture-"));
   });
   return /* @__PURE__ */ Dr.jsxs(Cg.Provider, { value: { state: i, dispatch: U }, children: [
-    /* @__PURE__ */ Dr.jsxs("div", { className: "so-hyper so-tw", children: [
+    /* @__PURE__ */ Dr.jsxs("div", { className: "so-hyper so-tw", "data-version": "2.0.10", children: [
       W.map((k, T) => /* @__PURE__ */ Dr.jsx(
         yg,
         {
