@@ -43,6 +43,7 @@
     },
     {% endif %}
     "product": {{ product | json }},
+    "product_metafields": {{ product.metafields.shineon | json }},
     "selected_variant": {{ product.selected_or_first_available_variant | json }},
     "variant_metafields": {
       {% for variant in product.variants %}
@@ -50,7 +51,10 @@
           "metal": {{ variant.metafields.shineon.metal | json }},
           "shape": {{ variant.metafields.shineon.shape | json }},
           "engravings": {{ variant.metafields.shineon.engravings | json }},
-          "schema_v2": {{ variant.metafields.shineon.schema_v2.value | default: variant.metafields.shineon.schema_v2 | json }}
+          "uploadable": {{ variant.metafields.shineon.uploadable | json }},
+          "schema_v2": {{ variant.metafields.shineon.schema_v2.value | default: variant.metafields.shineon.schema_v2 | json }},
+          "transformations_filenames_json": {{ variant.metafields.shineon.transformations_filenames_json.value | json }},
+          "transformations_json": {{ variant.metafields.shineon.transformations_json.value | json }}
         }{% unless forloop.last %},{% endunless %}
       {% endfor %}
     },
