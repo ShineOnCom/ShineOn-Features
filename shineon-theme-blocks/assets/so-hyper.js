@@ -5895,8 +5895,8 @@ const gp = {
     )
   ] });
 }, Cp = ({ currentVariant: Me, productInfo: ge, previewConfig: ne, inputs: C, metalType: Z }) => {
-  const _ = ne.backside.imgSrc, P = ne.backside.zone, x = Xt.useRef(null), [y, E] = Xt.useState(!1), d = async () => {
-    const c = ne.backside;
+  const _ = ne.engraving.imgSrc, P = ne.engraving.zone, x = Xt.useRef(null), [y, E] = Xt.useState(!1), d = async () => {
+    const c = ne.engraving;
     if (!(c != null && c.font)) return !1;
     const { family: g, size: f, weight: p, url: s, style: S = "normal" } = c.font;
     if (!g || !f || !p || !(s != null && s[0])) return !1;
@@ -5962,7 +5962,7 @@ const gp = {
     shadowOffsetY: 1
   }, n = async (c, g, f) => {
     c.clearRect(0, 0, g.width, g.height), c.drawImage(f, 0, 0);
-    const p = ne.backside;
+    const p = ne.engraving;
     if (!P || !(p != null && p.font) || !y) return;
     const s = P, S = Object.values(C).filter(Boolean), { family: b, weight: o } = p.font, A = S.length ? S : ["Your Words", "Here"], T = A.reduce((L, z) => L.length >= z.length ? L : z), I = l(c, T, s, A.length);
     c.font = `${o} ${I}px "${b}"`, c.textAlign = "center", c.textBaseline = "middle", A.forEach((L, z) => {
@@ -6090,7 +6090,7 @@ const gp = {
         `input-field-${p.id.key}`
       );
     }),
-    Me.backside.imgSrc && /* @__PURE__ */ ft.jsx(
+    Me.engraving.imgSrc && /* @__PURE__ */ ft.jsx(
       Cp,
       {
         currentVariant: ge,
@@ -43094,7 +43094,7 @@ const Ts = /* @__PURE__ */ Yo(U0), Vn = {
       return Ce.field_type === "custom" && ((Ae = Ce.slug) == null ? void 0 : Ae.includes("font-family-preview"));
     }
   ), A = {};
-  A.font = ((U = (z = Me.additions) == null ? void 0 : z.backside) == null ? void 0 : U.font) || !1, A.zone = ((oe = (F = (J = Me.additions) == null ? void 0 : J.backside) == null ? void 0 : F.shapes[Me.variant_metafields[C.id].shape]) == null ? void 0 : oe.zone) || !1, A.imgSrc = ((W = (ie = (ee = Me.additions) == null ? void 0 : ee.backside) == null ? void 0 : ie.shapes[Me.variant_metafields[C.id].shape]) == null ? void 0 : W.imgSrc[Me.variant_metafields[C.id].metal]) || !1;
+  A.font = ((U = (z = Me.additions) == null ? void 0 : z.engraving) == null ? void 0 : U.font) || !1, A.zone = ((oe = (F = (J = Me.additions) == null ? void 0 : J.engraving) == null ? void 0 : F.shapes[Me.variant_metafields[C.id].shape]) == null ? void 0 : oe.zone) || !1, A.imgSrc = ((W = (ie = (ee = Me.additions) == null ? void 0 : ee.engraving) == null ? void 0 : ie.shapes[Me.variant_metafields[C.id].shape]) == null ? void 0 : W.imgSrc[Me.variant_metafields[C.id].metal]) || !1;
   const T = {
     fields: o,
     // TODO: Symbols might be not only at the end -> previewSymbolAtEnd?
@@ -43112,9 +43112,9 @@ const Ts = /* @__PURE__ */ Yo(U0), Vn = {
       Me.variant_metafields[C.id].engravings || l.length
     ),
     itemPreview: ((_e = Me.product_metafields) == null ? void 0 : _e.item_preview) || !1,
-    backside: A || !1
+    engraving: A || !1
   };
-  return /* @__PURE__ */ ft.jsxs("div", { className: "so-hyper so-tw", "data-version": "2.0.16", children: [
+  return /* @__PURE__ */ ft.jsxs("div", { className: "so-hyper so-tw", "data-version": "2.1.0", children: [
     l.length > 0 && /* @__PURE__ */ ft.jsx(
       Ap,
       {
@@ -43169,7 +43169,7 @@ const Ts = /* @__PURE__ */ Yo(U0), Vn = {
   ] });
 };
 document.addEventListener("DOMContentLoaded", () => {
-  const Me = document.getElementById("so-hyper");
+  const Me = document.querySelectorAll("#so-hyper")[0];
   Me && dp.createRoot(Me).render(
     /* @__PURE__ */ ft.jsx(Xt.StrictMode, { children: /* @__PURE__ */ ft.jsx(V0, {}) })
   );
