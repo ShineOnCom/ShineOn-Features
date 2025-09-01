@@ -48,8 +48,10 @@
     "variant_metafields": {
       {% for variant in product.variants %}
         "{{ variant.id }}": {
+          "options": {{ variant.options | json }},
           "metal": {{ variant.metafields.shineon.metal | json }},
           "shape": {{ variant.metafields.shineon.shape | json }},
+          "engravable": {{ variant.metafields.shineon.engravable | json }},
           "engravings": {{ variant.metafields.shineon.engravings | json }},
           "uploadable": {{ variant.metafields.shineon.uploadable | json }},
           "schema_v2": {{ variant.metafields.shineon.schema_v2.value | default: variant.metafields.shineon.schema_v2 | json }},
@@ -72,6 +74,117 @@
     "additions": {
       "mapbox": {
         "access_token": {{ mapbox_access_token | default: "pk.eyJ1IjoiYWxla3NoaW5lb24iLCJhIjoiY202ejZiYjZxMDFnZjJrcXM3b2F4OTI1ZiJ9.OuSSAJIvxBUncZsIa4f9dg" | json }}
+      },
+      "chains": {
+        "left": {
+          "stainless": "https://cdn.shopify.com/s/files/1/0077/2420/4096/files/so-chain-left.png?v=1747998188",
+          "gold": "https://cdn.shopify.com/s/files/1/0077/2420/4096/files/so-chain-left-gold.png?v=1747998188"
+        },
+        "right": {
+          "stainless": "https://cdn.shopify.com/s/files/1/0077/2420/4096/files/so-chain-right.png?v=1747998188",
+          "gold": "https://cdn.shopify.com/s/files/1/0077/2420/4096/files/so-chain-right-gold.png?v=1747998188"
+        },
+        "vertical": {
+          "stainless": "https://cdn.shopify.com/s/files/1/0077/2420/4096/files/so-chain-vertical-stainless.png?v=1748261178",
+          "gold": "https://cdn.shopify.com/s/files/1/0077/2420/4096/files/so-chain-vertical-gold.png?v=1748261178",
+          "multiple": {
+            "2" : {
+              "stainless": "https://cdn.shopify.com/s/files/1/0077/2420/4096/files/so-chain-vertical-multiple-stainless-2.png?v=1748439778",
+              "gold": "https://cdn.shopify.com/s/files/1/0077/2420/4096/files/so-chain-vertical-multiple-gold-2.png?v=1748261178"
+            },
+            "3" : {
+              "stainless": "https://cdn.shopify.com/s/files/1/0077/2420/4096/files/so-chain-vertical-multiple-stainless-3.png?v=1748261178",
+              "gold": "https://cdn.shopify.com/s/files/1/0077/2420/4096/files/so-chain-vertical-multiple-gold-3.png?v=1748261178"
+            },
+            "4" : {
+              "stainless": "https://cdn.shopify.com/s/files/1/0077/2420/4096/files/so-chain-vertical-multiple-stainless-4.png?v=1748261178",
+              "gold": "https://cdn.shopify.com/s/files/1/0077/2420/4096/files/so-chain-vertical-multiple-gold-4.png?v=1748261178"
+            }
+          }
+        }
+      },
+      "engraving": {
+        "font":{
+          "family":"Tangerine, serif",
+          "url":["https://fonts.gstatic.com/s/tangerine/v17/IurY6Y5j_oScZZow4VOxCZZM.woff2"],
+          "size":"136px",
+          "line-height":"1",
+          "weight":"700",
+          "multiplier": 1.7
+        },
+        "shapes": {
+          "dogtag": {
+            "imgSrc": {
+              "stainless": "https://cdn.shopify.com/s/files/1/0666/7891/5376/files/dog-tag-silver-h.png?v=1749129375",
+              "gold": "https://cdn.shopify.com/s/files/1/0666/7891/5376/files/dog-tag-gold-h.png?v=1749129375"
+            },
+            "zone":{
+              "width":1000,
+              "height":504,
+              "x":552,
+              "y":252,
+              "zoneWidth":635,
+              "zoneHeight":329
+            }
+          },
+          "circle": {
+              "imgSrc": {
+                "stainless": "https://cdn.shopify.com/s/files/1/0666/7891/5376/files/circle-silver-v.png?v=1750336951",
+                "gold": "https://cdn.shopify.com/s/files/1/0666/7891/5376/files/circle-gold-v.png?v=1750336985"
+              },
+              "zone": {
+                "width":1000,
+                "height":1000,
+                "x":490,
+                "y":650,
+                "zoneWidth":450,
+                "zoneHeight":300
+              }
+          },
+          "heart": {
+              "imgSrc":{
+                "stainless": "https://cdn.shopify.com/s/files/1/0666/7891/5376/files/heart-silver-v.png?v=1750250887",
+                "gold": "https://cdn.shopify.com/s/files/1/0666/7891/5376/files/heart-gold-v.png?v=1750250887"
+              },
+              "zone": {
+                "width":1000,
+                "height":1000,
+                "x":490,
+                "y":600,
+                "zoneWidth":500,
+                "zoneHeight":330
+              }
+          },
+          "cross": {
+              "imgSrc":{
+                "stainless": "https://cdn.shopify.com/s/files/1/0666/7891/5376/files/Cross_1000_1000.jpg?v=1753799816",
+                "gold": "https://cdn.shopify.com/s/files/1/0666/7891/5376/files/Cross_Gold_1000_1000.jpg?v=1753799804"
+              },
+              "zone": {
+                "width":1000,
+                "height":1000,
+                "x":695,
+                "y":500,
+                "zoneWidth":480,
+                "zoneHeight":80
+              },
+              "font":{
+                "family":"Courgette",
+                "url":["http://fonts.gstatic.com/s/courgette/v4/2YO0EYtyE9HUPLZprahpZA.ttf"],
+                "size":"136px",
+                "line-height":"1",
+                "weight":"700",
+                "multiplier": 0.98,
+                "zone": {
+                  "x":710,
+                  "y":500,
+                  "zoneWidth":450,
+                  "zoneHeight":70,
+                  "textAlign": "right"
+                }
+              }
+          }
+        }
       }
     }
   }
