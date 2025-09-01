@@ -43120,7 +43120,7 @@ const Ts = /* @__PURE__ */ Yo(U0), Vn = {
     itemPreview: ((je = Me.product_metafields) == null ? void 0 : je.item_preview) || !1,
     engraving: A || !1
   };
-  return /* @__PURE__ */ ft.jsxs("div", { className: "so-hyper so-tw", "data-version": "2.2.0", children: [
+  return /* @__PURE__ */ ft.jsxs("div", { className: "so-hyper so-tw", "data-version": "2.2.1", children: [
     l.length > 0 && /* @__PURE__ */ ft.jsx(
       Ap,
       {
